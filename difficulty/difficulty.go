@@ -2,7 +2,7 @@ package difficulty
 
 import (
 	"fmt"
-	"github.com/george012/blockchain_box/coin_flags"
+	"github.com/sevndata/blockchain_box/coin_flags"
 	"math/big"
 	"strings"
 )

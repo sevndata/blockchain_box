@@ -4,8 +4,8 @@ Package blockchain_node_models blockchain Node Models
 package blockchain_node_models
 
 import (
-	"github.com/george012/blockchain_box/coin_flags"
-	"github.com/george012/blockchain_box/service_info"
+	"github.com/sevndata/blockchain_box/coin_flags"
+	"github.com/sevndata/blockchain_box/service_info"
 )
 
 type BlockchainNodeInfo struct {

@@ -2,7 +2,7 @@ package derive_bip_slip_44
 
 import (
 	"github.com/btcsuite/btcd/btcutil/hdkeychain"
-	"github.com/george012/blockchain_box/coin_flags"
+	"github.com/sevndata/blockchain_box/coin_flags"
 )
 
 const (

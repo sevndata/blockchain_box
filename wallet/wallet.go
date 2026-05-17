@@ -1,6 +1,6 @@
 package wallet
 
-import "github.com/george012/blockchain_box/coin_flags"
+import "github.com/sevndata/blockchain_box/coin_flags"
 
 type Wallet struct {
 	Coin                    coin_flags.CoinFlag // 币种标识

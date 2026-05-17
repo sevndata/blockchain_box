@@ -4,8 +4,8 @@ Package third_party_service Third-party services(zh-cn:第三方服务)
 package third_party_service
 
 import (
-	"github.com/george012/blockchain_box/service_info"
-	"github.com/george012/blockchain_box/service_info/domain_info"
+	"github.com/sevndata/blockchain_box/service_info"
+	"github.com/sevndata/blockchain_box/service_info/domain_info"
 )
 
 var (

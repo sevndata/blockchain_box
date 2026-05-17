@@ -5,7 +5,7 @@ package blockchain_node_install
 
 import (
 	"errors"
-	"github.com/george012/blockchain_box/coin_flags"
+	"github.com/sevndata/blockchain_box/coin_flags"
 )
 
 // InstallBlockChainNodeWithCoinFlag 通过传CoinFlag 安装区块链节点

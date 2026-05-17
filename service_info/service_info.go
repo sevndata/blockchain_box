@@ -1,8 +1,8 @@
 package service_info
 
 import (
-	"github.com/george012/blockchain_box/service_info/cert_info"
-	"github.com/george012/blockchain_box/service_info/sys_infos"
+	"github.com/sevndata/blockchain_box/service_info/cert_info"
+	"github.com/sevndata/blockchain_box/service_info/sys_infos"
 	"time"
 )
 

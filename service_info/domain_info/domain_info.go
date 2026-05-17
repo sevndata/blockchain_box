@@ -1,6 +1,6 @@
 package domain_info
 
-import "github.com/george012/blockchain_box/service_info/cert_info"
+import "github.com/sevndata/blockchain_box/service_info/cert_info"
 
 // DomainInfo 域名信息
 type DomainInfo struct {
