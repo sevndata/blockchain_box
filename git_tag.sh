@@ -109,20 +109,40 @@ function git_handle_ready() {
 
 function git_handle_push() {
     local current_version_no=${CURRENT_VERSION//v/}
-    local netx_version_no=${NEXT_VERSION//v/}
+    local next_version_no=${NEXT_VERSION//v/}
     local pre_del_version_no=$(get_pre_del_version_no "$current_version_no")
-    echo "Pre Del Version With v"${pre_del_version_no}
 
-    git add . \
-    && git commit -m "Update v${netx_version_no}" \
-    && git push --delete origin latest \
-    && git push \
-    && git tag v$netx_version_no \
-    && git tag -f latest v$netx_version_no \
-    && git push origin v$netx_version_no \
-    && git push origin latest \
-    && git tag -d v$pre_del_version_no
+    echo "Pre Del Version With v${pre_del_version_no}"
+
+    git add .
+
+    if git diff --cached --quiet; then
+        echo "No changes to commit"
+    else
+        git commit -m "Update v${next_version_no}"
+    fi
+
+    git push
+
+    # 创建/覆盖当前版本 tag
+    git tag -f "v${next_version_no}"
+
+    # latest 永远指向当前版本
+    git tag -f latest "v${next_version_no}"
+
+    # 推送版本 tag
+    git push -f origin "v${next_version_no}"
+
+    # 推送 latest tag，注意这里指定 refs/tags，避免和 branch 冲突
+    git push -f origin refs/tags/latest
+
+    # 删除本地上一个版本 tag，不存在也不报错
+    git tag -d "v${pre_del_version_no}" 2>/dev/null || true
+
+    # 如果你也想删除远端上一个版本 tag，打开下面这一行
+    # git push origin ":refs/tags/v${pre_del_version_no}" 2>/dev/null || true
 }
+
 
 handle_input(){
     if [[ $1 == "-get_pre_del_tag_name" ]]; then
