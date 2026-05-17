@@ -82,6 +82,8 @@ func GetCoinFlagByCoinName(name string) CoinFlag {
 		return CoinFlagB1T
 	case "TrumPOW", "Trumpow", "trumPOW", "trumpow", "TRUMPOW", "TRMP", "Trmp", "trmp":
 		return CoinFlagTRMP
+	case "TRON", "TRX":
+		return CoinFlagTRX
 	default:
 		return CoinFlagNone
 	}
